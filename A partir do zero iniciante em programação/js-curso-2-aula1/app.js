@@ -1,11 +1,15 @@
+let listaNumSorteados = [];
+let numLimite = 100;
 let numero = gerarNumeroAleatorio();
 let tentativas = 1;
+
 function exibirTextoNaTela(tag, texto) {
     let campo = document.querySelector(tag);
     campo.innerHTML = texto;
+    responsiveVoice.speak(texto)
 }
 
-function mensagemInicial(){
+function mensagemInicial() {
     exibirTextoNaTela('h1', 'Roleta Russa');
     exibirTextoNaTela('p', 'Escolha um numero entre 1 e 10');
 }
@@ -30,7 +34,18 @@ function verificarChute() {
 }
 
 function gerarNumeroAleatorio() {
-    return parseInt(Math.random() * 10 + 1);
+    let numeroEscolhido = parseInt(Math.random() * numLimite + 1);
+    let qtdeDeElemtsLista = listaNumSorteados.length;
+
+    if(qtdeDeElemtsLista == numLimite){
+        listaNumSorteados = [];
+    }
+    if (listaNumSorteados.includes(numeroEscolhido)) {
+        return gerarNumeroAleatorio();
+    } else {
+        listaNumSorteados.push(numeroEscolhido);
+        return numeroEscolhido;
+    }
 }
 
 function limparCampo() {
@@ -43,6 +58,6 @@ function reiniciarJogo() {
     limparCampo();
     tentativas = 1;
     mensagemInicial();
-    document.getElementById('reiniciar').setAttribute('disabled',true)
+    document.getElementById('reiniciar').setAttribute('disabled', true);
 }
 mensagemInicial();
