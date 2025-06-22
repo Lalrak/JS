@@ -17,5 +17,8 @@
     "url": "https://github.com/Lalrak/JS/issues"
   },
   "homepage": "https://github.com/Lalrak/JS#readme",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "commander": "^14.0.0"
+  }
 }
