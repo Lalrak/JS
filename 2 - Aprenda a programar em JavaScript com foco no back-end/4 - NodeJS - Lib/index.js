@@ -1,4 +1,5 @@
 const fs = require("fs");
+const trataErros = require("./funcoesErro");
 
 const caminhoArquivo = process.argv;
 const link =
@@ -9,7 +10,7 @@ fs.readFile(link, "utf-8", (erro, texto) => {
     if (erro) throw erro;
     contaPalavras(texto);
   } catch (erro) {
-    console.log();
+    trataErros(erro);
   }
 });
 
