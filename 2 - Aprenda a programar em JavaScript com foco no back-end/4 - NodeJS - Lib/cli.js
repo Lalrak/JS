@@ -23,10 +23,13 @@ program
 
     try {
       processaArquivo(caminhoTexto, caminhoDestino);
+      console.log("texto processado com sucesso");
     } catch (error) {
       console.log("ocorreu um erro no processamento do arquivo");
     }
   });
+
+program.parse();
 
 function processaArquivo(texto, destino) {
   fs.readFile(texto, "utf-8", (erro, texto) => {
