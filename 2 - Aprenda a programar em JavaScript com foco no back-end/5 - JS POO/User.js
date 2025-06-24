@@ -50,15 +50,24 @@ export default class User {
     this.#ativo = ativo;
   }
 
+  // exibirInfos() {
+  //   return `${this.#nome}, ${this.#email}, ${this.#nascimento}, ${
+  //     this.#role
+  //   }, ${this.#ativo}`;
+  // }
+
   exibirInfos() {
-    return `${this.#nome}, ${this.#email}, ${this.#nascimento}, ${
-      this.#role
-    }, ${this.#ativo}`;
+    if (this.role === "estudante") {
+      return `dados estudante: ${this.nome}`;
+    }
+    if (this.role === "admin") {
+      return `dados admin: ${this.nome}, ${this.role}`;
+    }
+    if (this.role === "docente") {
+      return `dados docente: ${this.nome}, ${this.email}`;
+    }
+  }
+  static exibirInfos(nome, email) {
+    return `dados: ${nome}, ${email}`;
   }
 }
-
-// const user1 = new User("juliana", "j@j.com", "2024-01-01");
-// console.log(user1.exibirInfos());
-// console.log(user1);
-
-// console.log(User.prototype.isPrototypeOf(user1));
