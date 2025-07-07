@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon \"3 - APIs com Node.js e Express/2-Criando-API-Rest-Express-MongoDB/server.js\""
+    "dev": "nodemon \"3 - APIs com Node.js e Express/3-Buscas-paginacao-erros-Api/server.js\""
   },
   "repository": {
     "type": "git",
@@ -26,5 +26,10 @@
     "mongodb": "^6.17.0",
     "mongoose": "^7.3.4",
     "nodemon": "^3.1.10"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.30.1",
+    "eslint": "^9.30.1",
+    "globals": "^16.3.0"
   }
 }
